@@ -1,45 +1,37 @@
-# Render Blueprint — despliegue de la plataforma Defensa Alma.
+# Render Blueprint — despliegue de la plataforma Defensa Alma (plan gratuito para pruebas).
 # En Render: New → Blueprint → conecta este repositorio. Render lee este archivo.
-# Nota: el disco persistente requiere un plan de pago (Starter o superior). En el plan
-# gratuito la base de datos SQLite se reinicia en cada despliegue; para producción usa
-# un plan con disco, o migra a Postgres/Supabase (ver README_DESPLIEGUE.md).
+# Nota: en el plan gratuito el servicio se "duerme" tras inactividad y no hay disco
+# persistente (los documentos generados son temporales). La base de datos va en Supabase
+# (DATABASE_URL), así que los casos, pagos y citas SÍ se conservan.
 services:
   - type: web
     name: defensa-alma
     runtime: node
-    plan: starter
+    plan: free
     region: oregon
     buildCommand: npm install
     startCommand: node server.js
     healthCheckPath: /healthz
     autoDeploy: true
-    disk:
-      name: data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: "22"
       - key: TZ
         value: America/Santiago
-      - key: DATABASE_URL
-        sync: false                # cadena de conexión de Supabase (Postgres). Recomendado.
-      - key: PG_DIR
-        value: /var/data/pgdata    # respaldo: Postgres local (PGlite) si no defines DATABASE_URL
-      - key: DOCS_DIR
-        value: /var/data/docs      # documentos generados (.docx)
       - key: SECURE_COOKIES
         value: "true"
       - key: SESSION_SECRET
         generateValue: true        # Render genera un secreto aleatorio
+      - key: DATABASE_URL
+        sync: false                # cadena de conexión de Supabase (Session pooler)
       - key: BASE_URL
-        sync: false                # ej: https://defensa-alma.onrender.com o https://app.defensaalma.cl
+        sync: false                # ej: https://defensa-alma.onrender.com (se ajusta tras el primer deploy)
       - key: ADMIN_EMAIL
         sync: false                # tu correo de acceso al panel
       - key: ADMIN_PASSWORD
         sync: false                # tu clave de acceso al panel
       - key: TBK_ENV
-        value: integracion         # cambia a "produccion" cuando tengas Transbank
+        value: integracion         # cambia a "produccion" cuando cargues tus credenciales Webpay
       - key: PAY_DEMO
         value: "false"
       - key: SLOT_DURATION_MIN
