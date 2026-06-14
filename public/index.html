@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#3D4D8C">
+
+<title>Defensa Alma — Tu trámite legal, transparente y en línea</title>
+<meta name="description" content="Plataforma legaltech de derecho de familia y migratorio. 16 servicios con tarifa fija publicada desde $20.000. Diagnóstico gratuito, generación de documentos, atención por videollamada y panel de seguimiento. Atención online a todo Chile.">
+<meta name="keywords" content="abogada online Chile, divorcio, pensión de alimentos, residencia, visa, migración, tarifa fija, diagnóstico legal gratuito, legaltech">
+<meta name="author" content="Defensa Alma">
+<link rel="canonical" href="https://defensaalma.cl/">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Defensa Alma — Tu trámite legal, transparente y en línea">
+<meta property="og:description" content="16 servicios con tarifa fija desde $20.000. Diagnóstico gratuito, documentos, videollamada y seguimiento en línea. A todo Chile.">
+<meta property="og:url" content="https://defensaalma.cl/">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Defensa Alma">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Defensa Alma","description":"Plataforma legaltech de derecho de familia y migratorio con tarifa fija publicada.","url":"https://defensaalma.cl/","email":"contacto@defensaalma.cl","areaServed":"CL","priceRange":"$20.000 - $500.000","slogan":"Tu trámite legal, transparente y en línea."}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#4B5BA0; --blue-deep:#3D4D8C; --blue-ink:#33406F; --blue-soft:#E7EAF5;
+  --coral:#E8915B; --coral-deep:#D9783F; --peach:#F7DFC8; --peach-soft:#FBEEDF;
+  --cream:#FBF6EE; --cream-2:#F4ECDD; --white:#fff;
+  --ink:#2E3350; --muted:#7C84A1; --line:#E7E0D0;
+  --green:#4FA079;
+  --shadow:0 22px 50px -26px rgba(51,64,111,.45);
+  --shadow-sm:0 10px 26px -16px rgba(51,64,111,.40);
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--coral-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:none;cursor:pointer;font-family:'Inter';font-size:.98rem;font-weight:600;padding:.85rem 1.6rem;border-radius:999px;transition:transform .18s,box-shadow .18s,background .18s,border-color .18s;line-height:1}
+.btn svg{width:18px;height:18px}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 12px 24px -12px rgba(217,120,63,.85)}
+.btn-coral:hover{background:var(--coral-deep);transform:translateY(-2px)}
+.btn-blue{background:var(--blue-deep);color:#fff}
+.btn-blue:hover{background:var(--blue-ink);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-outline{background:#fff;color:var(--blue-deep);border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--blue);transform:translateY(-2px)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(251,246,238,.9);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
+.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(51,64,111,.5)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:.6rem 24px;display:flex;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem}
+.brand img{height:38px;width:auto}
+.brand .bn{font-family:'Cormorant Garamond';font-weight:700;font-size:1.4rem;color:var(--blue-ink);line-height:1}
+.nav-links{display:flex;gap:1.5rem;margin-left:auto}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--blue-deep)}
+.nav-cta{display:flex;gap:.5rem;align-items:center}
+.nav-login{font-size:.92rem;font-weight:600;color:var(--blue-deep);padding:.5rem .4rem}
+.burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;color:var(--blue-deep)}
+.burger svg{width:28px;height:28px}
+
+/* HERO */
+.hero{position:relative;padding:6.5rem 0 4rem;background:radial-gradient(120% 95% at 80% -10%,#5566AD 0%,var(--blue-deep) 50%,var(--blue-ink) 100%);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-60px;bottom:-40px;width:520px;height:680px;background:url('assets/figura-crema.png') no-repeat center/contain;opacity:.07;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.4rem .9rem;border-radius:999px;font-size:.8rem;font-weight:500;margin-bottom:1.2rem}
+.hero-pill img{height:20px}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.4rem);font-weight:700;line-height:1.08}
+.hero h1 em{font-style:italic;color:var(--coral)}
+.hero-lead{font-size:1.12rem;color:rgba(255,255,255,.85);margin-top:1.1rem;max-width:42ch}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.7rem}
+.hero-chips a{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);padding:.45rem .9rem;border-radius:999px;font-size:.84rem;transition:background .15s}
+.hero-chips a:hover{background:rgba(255,255,255,.18)}
+.hero-chips .d{width:8px;height:8px;border-radius:50%}
+.hero-stat{margin-top:1.8rem;font-size:.84rem;color:rgba(255,255,255,.65);display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.hero-stat b{color:#fff;font-weight:600}
+
+/* BANDA PROMOCIONAL bajo el demo */
+.promo-band{background:linear-gradient(90deg,var(--coral),var(--coral-deep));color:#fff;padding:1.05rem 24px;display:flex;align-items:center;justify-content:center;gap:1.1rem 1.4rem;flex-wrap:wrap;box-shadow:inset 0 6px 18px -12px rgba(0,0,0,.35)}
+.promo-band .pb-txt{display:inline-flex;align-items:center;gap:.6rem;font-family:'Cormorant Garamond';font-weight:600;font-size:clamp(1.1rem,2.7vw,1.55rem);line-height:1.25}
+.promo-band .pb-txt b{font-weight:700;text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.promo-band .pb-txt svg{width:24px;height:24px;flex:none}
+.promo-band .pb-btn{background:#fff;color:var(--coral-deep);border:none;border-radius:999px;padding:.6rem 1.4rem;font-family:'Inter';font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap;transition:transform .18s,box-shadow .18s}
+.promo-band .pb-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -10px rgba(0,0,0,.4)}
+
+/* BROWSER MOCKUP */
+.bw{background:#fff;border-radius:16px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);overflow:hidden;color:var(--ink)}
+.bw-bar{background:#EEF0F6;padding:.6rem .9rem;display:flex;align-items:center;gap:.4rem;border-bottom:1px solid #E2E5EE}
+.bw-dot{width:10px;height:10px;border-radius:50%}
+.bw-url{margin-left:.6rem;background:#fff;border-radius:6px;font-size:.72rem;color:var(--muted);padding:.25rem .7rem;flex:1}
+.bw-body{padding:1.4rem}
+.bw-brand{font-family:'Cormorant Garamond';font-weight:700;color:var(--blue-ink);font-size:1.1rem;margin-bottom:.9rem}
+.bw-step{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}
+.bw-prog{height:6px;background:#EEF0F6;border-radius:6px;margin:.4rem 0 1.1rem;overflow:hidden}
+.bw-prog span{display:block;height:100%;width:60%;background:var(--coral);border-radius:6px}
+.bw-q{font-family:'Cormorant Garamond';font-size:1.3rem;font-weight:700;color:var(--blue-ink)}
+.bw-sub{font-size:.82rem;color:var(--muted);margin-bottom:.9rem}
+.bw-opt{display:flex;align-items:flex-start;gap:.6rem;border:1.5px solid var(--line);border-radius:11px;padding:.7rem .85rem;margin-bottom:.55rem;font-size:.86rem}
+.bw-opt.sel{border-color:var(--coral);background:var(--peach-soft)}
+.bw-opt .rd{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none;margin-top:.1rem}
+.bw-opt.sel .rd{border-color:var(--coral);background:var(--coral);box-shadow:inset 0 0 0 3px #fff}
+.bw-opt small{display:block;color:var(--muted);font-size:.72rem}
+.bw-result{margin-top:1rem;border-left:3px solid var(--coral);background:var(--peach-soft);border-radius:9px;padding:.8rem .9rem}
+.bw-result .l{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}
+.bw-result .v{font-weight:600;color:var(--blue-ink);font-size:.92rem;margin-top:.15rem}
+.bw-result .p{font-size:.8rem;color:var(--muted)}
+#bwScreen{min-height:300px;transition:opacity .2s ease, transform .2s ease}
+.bw-dots{display:flex;gap:6px;justify-content:center;padding:12px 0 2px}
+.bw-dots i{width:7px;height:7px;border-radius:50%;background:#D9DEEC;cursor:pointer;transition:background .25s,width .25s}
+.bw-dots i.on{background:var(--coral);width:18px;border-radius:6px}
+.bw-center{text-align:center}
+.bw-check{width:52px;height:52px;border-radius:50%;background:#E4F3EC;display:flex;align-items:center;justify-content:center;margin:10px auto 10px}
+.bw-check svg{width:27px;height:27px;color:#4FA079}
+.bw-amt{font-family:'Cormorant Garamond';font-size:1.7rem;font-weight:700;color:var(--blue-ink)}
+.bw-btn{background:var(--coral);color:#fff;border-radius:9px;text-align:center;padding:.6rem;font-size:.82rem;font-weight:600;margin-top:.8rem}
+.bw-line{display:flex;align-items:center;gap:.55rem;font-size:.82rem;padding:.2rem 0;color:var(--ink)}
+.bw-line .c{width:19px;height:19px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center}
+.bw-line.done .c{background:#4FA079;color:#fff}
+.bw-line.now .c{background:var(--coral);color:#fff;box-shadow:0 0 0 3px var(--peach-soft)}
+.bw-line.todo{color:var(--muted)}
+.bw-line.todo .c{border:2px solid #D9DEEC}
+.bw-line .c svg{width:11px;height:11px}
+.bw-fakelink{display:flex;gap:.4rem;margin-top:.7rem}
+.bw-fakelink input{flex:1;font-size:.7rem;border:1.5px solid var(--line);border-radius:8px;padding:.42rem .5rem;color:var(--blue-ink);background:#fff}
+.bw-fakelink span{background:var(--blue-deep);color:#fff;border-radius:8px;padding:.42rem .6rem;font-size:.7rem;font-weight:600}
+
+/* SECTIONS */
+.band{padding:5rem 0}
+.band-cream{background:var(--cream)}
+.band-cream2{background:var(--cream-2)}
+.band-blue{background:var(--blue-deep);color:#fff}
+.sec-head{text-align:center;max-width:62ch;margin:0 auto 3rem}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,2.7rem);font-weight:700;color:var(--blue-ink);line-height:1.1;margin-top:.5rem}
+.band-blue .sec-head h2{color:#fff}
+.sec-head p{color:var(--muted);margin-top:.8rem;font-size:1.05rem}
+.band-blue .sec-head p{color:rgba(255,255,255,.8)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* FLOW */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem}
+.fstep{background:#fff;border:1px solid var(--line);border-radius:15px;padding:1.4rem 1rem;text-align:center;box-shadow:var(--shadow-sm)}
+.fnum{width:48px;height:48px;border-radius:50%;background:var(--blue-deep);color:#fff;font-family:'Cormorant Garamond';font-weight:700;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem}
+.fstep h4{font-family:'Inter';font-size:.98rem;color:var(--blue-ink);font-weight:700;margin-bottom:.3rem}
+.fstep p{font-size:.8rem;color:var(--muted);line-height:1.45}
+.fmeta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.2rem}
+.fmeta .c{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.5rem;text-align:center;min-width:180px;box-shadow:var(--shadow-sm)}
+.fmeta .c b{display:block;font-family:'Cormorant Garamond';font-size:1.7rem;color:var(--coral-deep);font-weight:700}
+.fmeta .c span{font-size:.83rem;color:var(--muted)}
+.fmeta .c em{font-style:normal;font-size:.74rem;color:var(--muted);opacity:.8}
+.demo-row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+.demo-pill{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px dashed var(--coral);color:var(--coral-deep);border-radius:999px;padding:.55rem 1.1rem;font-size:.86rem;font-weight:600;cursor:pointer;transition:background .15s}
+.demo-pill:hover{background:var(--peach-soft)}
+.demo-pill svg{width:17px;height:17px}
+
+/* MODULES */
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.mod{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.9rem;box-shadow:var(--shadow-sm);border-top:4px solid var(--coral)}
+.mod-h{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.3rem}
+.mod-h .n{font-family:'Cormorant Garamond';font-size:2rem;font-weight:700;color:var(--coral)}
+.mod-h h3{font-size:1.4rem;color:var(--blue-ink);font-weight:700}
+.mod-intro{color:var(--muted);font-size:.94rem;margin-bottom:1rem}
+.mod-feat{list-style:none}
+.mod-feat li{display:flex;gap:.55rem;align-items:flex-start;font-size:.9rem;margin-top:.5rem}
+.mod-feat li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);margin-top:.55rem;flex:none}
+
+/* TARJETAS HUMANAS (acompañamiento) */
+.care-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
+.care{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.1rem 1.9rem;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+.care:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.care .ico{width:64px;height:64px;border-radius:19px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.care .ico svg{width:31px;height:31px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.care h3{font-size:1.5rem;color:var(--blue-ink);font-weight:700;line-height:1.12;margin-bottom:.55rem}
+.care p{color:var(--muted);font-size:1rem;line-height:1.6}
+.care .kicker{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.86rem;font-weight:600;color:var(--coral-deep)}
+.care .kicker svg{width:16px;height:16px;fill:none;stroke-width:2}
+
+/* BLOQUE OTROS CASOS */
+.otros{background:#fff;border:1px solid var(--line);border-left:5px solid var(--coral);border-radius:20px;padding:2.2rem;text-align:center;max-width:760px;margin:0 auto;box-shadow:var(--shadow-sm)}
+.otros .oic{width:58px;height:58px;border-radius:16px;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.otros .oic svg{width:30px;height:30px;stroke:var(--coral-deep);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.otros h3{font-size:1.6rem;color:var(--blue-ink);font-weight:700;margin-bottom:.5rem}
+.otros p{color:var(--muted);font-size:1.02rem;max-width:56ch;margin:0 auto 1.4rem}
+.otros p b{color:var(--coral-deep)}
+
+/* CATALOG */
+.cat-group{margin-bottom:2rem}
+.cat-gh{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.cat-gh .tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;padding:.3rem .7rem;border-radius:8px}
+.cat-gh h3{font-size:1.3rem;color:var(--blue-ink);font-weight:700}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.9rem}
+.price-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:.5rem;transition:transform .18s,box-shadow .18s;position:relative}
+.price-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.price-card.feat{border-color:var(--coral);box-shadow:0 14px 30px -18px rgba(217,120,63,.6)}
+.price-card.hot{border:1.5px solid var(--blue-deep);box-shadow:0 18px 38px -18px rgba(51,64,111,.55);background:linear-gradient(180deg,#fff, #F6F8FE)}
+.price-card .star{position:absolute;top:-10px;right:14px;background:var(--coral);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.05em;padding:.25rem .6rem;border-radius:999px}
+.price-card .star.star-hot{background:var(--blue-deep);left:14px;right:auto}
+#grid-destacados .price-card{border-width:1.5px}
+.price-card h4{font-family:'Inter';font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.25}
+.price-card .amt{font-family:'Cormorant Garamond';font-size:1.8rem;font-weight:700;color:var(--blue-ink);margin-top:auto}
+.price-card .amt span{font-size:.8rem;font-family:'Inter';color:var(--muted);font-weight:500}
+.cat-note{margin-top:1rem;font-size:.88rem;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem}
+.cat-note b{color:var(--blue-ink)}
+
+/* PANEL PREVIEW */
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.panel-card{background:#fff;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.panel-top{background:var(--blue-deep);color:#fff;padding:1.3rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.panel-top .h{font-family:'Cormorant Garamond';font-size:1.4rem;font-weight:700}
+.panel-top .s{font-size:.78rem;color:rgba(255,255,255,.7)}
+.panel-top .av{width:40px;height:40px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.panel-body{padding:1.5rem}
+.case-box{background:var(--blue-deep);color:#fff;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.3rem}
+.case-box .t{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);font-weight:700}
+.case-box .n{font-family:'Cormorant Garamond';font-size:1.3rem;font-weight:700;margin:.1rem 0}
+.case-box .j{font-size:.76rem;color:rgba(255,255,255,.7)}
+.tl-title{font-weight:700;color:var(--blue-ink);font-size:.95rem;margin-bottom:.9rem}
+.tl{list-style:none;position:relative}
+.tl li{display:flex;align-items:center;gap:.7rem;padding:.4rem 0;font-size:.9rem}
+.tl .ic{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center}
+.tl .done .ic{background:var(--green);color:#fff}
+.tl .now .ic{background:var(--coral);color:#fff;box-shadow:0 0 0 4px var(--peach-soft)}
+.tl .todo .ic{background:#fff;border:2px solid var(--line)}
+.tl .ic svg{width:13px;height:13px}
+.tl .todo{color:var(--muted)}
+.note-box{margin-top:1.2rem;background:var(--peach-soft);border-radius:10px;padding:.85rem 1rem}
+.note-box .t{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}
+.note-box .v{font-size:.88rem;color:var(--ink)}
+
+/* SEGMENTS */
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.seg{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.9rem;box-shadow:var(--shadow-sm)}
+.seg .ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.seg .ic svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2}
+.seg h3{font-size:1.4rem;color:var(--blue-ink);margin-bottom:.4rem}
+.seg p{font-size:.94rem;color:var(--muted)}
+.seg .stat{margin-top:1rem;display:flex;gap:1.4rem;flex-wrap:wrap}
+.seg .stat b{display:block;font-family:'Cormorant Garamond';font-size:1.6rem;color:var(--coral-deep);line-height:1}
+.seg .stat span{font-size:.76rem;color:var(--muted)}
+
+/* CTA FINAL */
+.cta-final{background:radial-gradient(120% 130% at 50% 0%,#5566AD,var(--blue-ink));color:#fff;text-align:center;padding:4.5rem 24px}
+.cta-final h2{font-size:clamp(1.9rem,4.4vw,2.7rem);font-weight:700}
+.cta-final p{color:rgba(255,255,255,.85);margin:.8rem auto 1.8rem;max-width:52ch}
+.cta-final .hero-cta{justify-content:center}
+
+/* FOOTER */
+footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:center;padding:3rem 24px}
+.ft img{height:64px;margin:0 auto .7rem;opacity:.95}
+.ft .name{font-family:'Cormorant Garamond';font-size:1.7rem;font-weight:700;color:#fff}
+.ft .sub{font-size:.72rem;letter-spacing:.3em;color:var(--coral);margin-top:.2rem}
+.ft a{color:rgba(255,255,255,.8)}
+.ft a:hover{color:#fff}
+.ft .contact{margin:1.2rem 0;line-height:1.9}
+.ft .legal{font-size:.76rem;color:rgba(255,255,255,.5);max-width:64ch;margin:1rem auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:1.2rem}
+
+/* FLOAT WA */
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);animation:pulse 2.6s infinite}
+.float-wa svg{width:30px;height:30px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(33,40,75,.55);backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.modal-card{background:var(--cream);border-radius:20px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+.modal-head{background:var(--blue-deep);color:#fff;padding:1.3rem 1.5rem;border-radius:20px 20px 0 0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0}
+.modal-head .t{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700}
+.modal-head .x{background:rgba(255,255,255,.16);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1.05rem}
+.modal-body{padding:1.6rem}
+.progress{height:6px;background:var(--cream-2);border-radius:6px;overflow:hidden;margin-bottom:.5rem}
+.progress span{display:block;height:100%;background:var(--coral);transition:width .35s}
+.step-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);font-weight:700;margin-bottom:1rem}
+.q-title{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700;color:var(--blue-ink);margin-bottom:1.1rem}
+.opt{display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:.9rem 1.1rem;margin-bottom:.65rem;cursor:pointer;transition:border-color .15s,background .15s;font-size:.95rem;font-family:'Inter';color:var(--ink)}
+.opt:hover{border-color:var(--coral);background:var(--peach-soft)}
+.opt .od{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none}
+.opt small{display:block;color:var(--muted);font-size:.78rem}
+.result-box{background:#fff;border-left:4px solid var(--coral);border-radius:12px;padding:1.2rem 1.3rem;margin:.4rem 0 1rem}
+.result-box .rl{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}
+.result-box h4{font-family:'Cormorant Garamond';font-size:1.5rem;color:var(--blue-ink);margin:.2rem 0 .5rem}
+.result-box .meta{font-size:.92rem;color:var(--muted)}
+.result-box .meta b{color:var(--blue-ink)}
+.demo-note{background:var(--cream-2);border:1px dashed var(--coral);border-radius:12px;padding:.85rem 1rem;font-size:.82rem;color:var(--muted);margin-top:1rem}
+.demo-visual{text-align:center;padding:.6rem 0 0}
+.demo-visual .big{width:74px;height:74px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.demo-visual .big svg{width:36px;height:36px;color:var(--blue-deep)}
+.back-link{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.9rem;margin-top:.5rem;font-family:'Inter'}
+.back-link:hover{color:var(--blue-deep)}
+.price-card{cursor:pointer}
+.price-card .go{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:600;color:var(--coral-deep);margin-top:.2rem}
+.price-card .go svg{width:15px;height:15px;transition:transform .18s}
+.price-card:hover .go svg{transform:translateX(3px)}
+.coti-block{background:#fff;border:1px solid var(--line);border-radius:11px;padding:.85rem 1rem;margin-top:.7rem;font-size:.9rem;color:var(--ink)}
+.coti-block .coti-l{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);font-weight:700;margin-bottom:.2rem}
+.spinner{width:44px;height:44px;border:4px solid var(--cream-2);border-top-color:var(--coral);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.field{margin-bottom:.85rem}
+.field label{display:block;font-size:.76rem;font-weight:600;color:var(--blue-ink);margin-bottom:.3rem}
+.field input{width:100%;font-family:'Inter';font-size:.95rem;padding:.72rem .9rem;border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}
+.field input:focus{outline:none;border-color:var(--coral)}
+.field .err{color:#C0453B;font-size:.75rem;margin-top:.25rem;display:none}
+.field.invalid input{border-color:#C0453B;background:#FDF2F0}
+.field.invalid .err{display:block}
+.linkbox{display:flex;gap:.5rem;margin-top:.5rem}
+.linkbox input{flex:1;font-family:'Inter';font-size:.82rem;padding:.6rem .7rem;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--blue-ink)}
+.linkbox button{flex:none;border:none;background:var(--blue-deep);color:#fff;border-radius:10px;padding:0 .95rem;cursor:pointer;font-size:.8rem;font-weight:600}
+.linkbox button:hover{background:var(--blue-ink)}
+
+@media(max-width:920px){
+  .hero-grid,.mods,.panel-grid,.seg-grid{grid-template-columns:1fr}
+  .hero-mockup{max-width:430px;margin:0 auto}
+  .flow{grid-template-columns:repeat(3,1fr)}
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav.open .nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:1rem 24px;gap:1rem;border-bottom:1px solid var(--line)}
+  .nav.open .nav-cta{display:none}
+}
+@media(max-width:560px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.flow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img src="assets/figura-dorada.png" alt="Defensa Alma"><span class="bn">Defensa Alma</span></a>
+    <button class="burger" id="burger" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button>
+    <div class="nav-links">
+      <a href="#como">Cómo funciona</a>
+      <a href="#plataforma">La plataforma</a>
+      <a href="#tarifas">Tarifas</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="nav-login" onclick="openDiag();return false">Ingresar</a>
+      <button class="btn btn-coral" style="padding:.6rem 1.1rem;font-size:.9rem" onclick="openDiag()">Diagnóstico gratuito</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-pill"><img src="assets/figura-crema.png" alt="">Estudio Jurídico · Plataforma online</span>
+      <h1>Tu trámite legal, <em>transparente</em> y en línea</h1>
+      <p class="hero-lead">16 servicios con tarifa fija publicada desde $20.000. Diagnóstico gratuito, documentos preparados por una abogada y seguimiento de tu caso, sin salir de casa.</p>
+      <div class="hero-cta">
+        <button class="btn btn-coral" onclick="openDiag()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.5 14.5 4 20"/><circle cx="13" cy="9" r="6"/></svg>
+          Diagnóstico gratuito
+        </button>
+        <a href="#tarifas" class="btn btn-ghost">Ver catálogo de tarifas</a>
+      </div>
+      <div class="hero-chips">
+        <a href="#" onclick="openDiag('familia');return false"><span class="d" style="background:#E8915B"></span>Familia</a>
+        <a href="#" onclick="openDiag('migracion');return false"><span class="d" style="background:#7FA8C9"></span>Migración</a>
+        <a href="#" onclick="openDiag('escrituras');return false"><span class="d" style="background:#C9A24B"></span>Escrituras y trámites</a>
+        <a href="#" onclick="openDiag('marcas');return false"><span class="d" style="background:#8E6FB0"></span>Marcas</a>
+      </div>
+      <p class="hero-stat"><b>100%</b> online&nbsp;·&nbsp;atención a todo Chile</p>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="bw">
+        <div class="bw-bar"><span class="bw-dot" style="background:#FF5F57"></span><span class="bw-dot" style="background:#FEBC2E"></span><span class="bw-dot" style="background:#28C840"></span><span class="bw-url" id="bwUrl">defensaalma.cl/diagnostico</span></div>
+        <div class="bw-body">
+          <div class="bw-brand">Defensa Alma</div>
+          <div id="bwScreen"></div>
+          <div class="bw-dots" id="bwDots"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BANDA: regístrate y haz seguimiento -->
+<section class="promo-band">
+  <span class="pb-txt">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    Regístrate y haz seguimiento de tu causa, <b>actualizada en línea</b>
+  </span>
+  <button class="pb-btn" onclick="openDiag()">Diagnóstico gratis</button>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="band band-cream2" id="como">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Flujo de usuario</span>
+      <h2>Seis pasos, del primer contacto al cierre</h2>
+      <p>Entiendes tu situación, conoces el costo desde el inicio y resuelves en línea, con respaldo profesional en cada etapa.</p>
+    </div>
+    <div class="flow reveal">
+      <div class="fstep"><div class="fnum">1</div><h4>Ingreso</h4><p>Llegas a la plataforma y cuentas qué necesitas.</p></div>
+      <div class="fstep"><div class="fnum">2</div><h4>Diagnóstico</h4><p>Entrevista guiada de 3–5 min que clasifica tu caso.</p></div>
+      <div class="fstep"><div class="fnum">3</div><h4>Cotización</h4><p>Tipología, plazos y tarifa plana al instante.</p></div>
+      <div class="fstep"><div class="fnum">4</div><h4>Pago y agenda</h4><p>Pagas con Webpay y agendas tu videollamada.</p></div>
+      <div class="fstep"><div class="fnum">5</div><h4>Atención</h4><p>Videollamada con la abogada, con el expediente a la vista.</p></div>
+      <div class="fstep"><div class="fnum">6</div><h4>Seguimiento</h4><p>Panel privado con hitos, plazos y notificaciones.</p></div>
+    </div>
+    <div class="fmeta reveal">
+      <div class="c"><b>3–5 min</b><span>Diagnóstico inicial</span><br><em>Sin agendar entrevista</em></div>
+      <div class="c"><b>48 hrs</b><span>Preparación documental</span><br><em>Borradores listos para validación</em></div>
+      <div class="c"><b>Tarifa fija</b><span>Sin sorpresas</span><br><em>El precio se conoce desde el inicio</em></div>
+    </div>
+    <div class="demo-row reveal">
+      <button class="demo-pill" onclick="openDemo('pago')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Demo: Pago Webpay</button>
+      <button class="demo-pill" onclick="openDemo('video')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>Demo: Videollamada</button>
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMA / ACOMPAÑAMIENTO -->
+<section class="band band-cream" id="plataforma">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo te acompañamos</span>
+      <h2>Para que lo legal deje de ser un dolor de cabeza</h2>
+      <p>Tú solo cuentas qué te pasa. Del resto nos hacemos cargo nosotras, con tecnología que te ahorra tiempo y una abogada que da la cara.</p>
+    </div>
+    <div class="care-grid">
+
+      <div class="care reveal">
+        <div class="ico" style="background:#FBEEDF"><svg viewBox="0 0 24 24" stroke="#D9783F"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.2 1 2.5h6c0-1.3.3-1.8 1-2.5A6 6 0 0 0 12 3Z"/></svg></div>
+        <h3>Sabes qué necesitas, al tiro</h3>
+        <p>Respondes unas pocas preguntas y, en minutos, te decimos qué trámite te corresponde, cuánto cuesta y cuánto demora. En palabras simples, sin letra chica y sin compromiso.</p>
+        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Tu primer paso es gratis</span>
+      </div>
+
+      <div class="care reveal">
+        <div class="ico" style="background:#E7EAF5"><svg viewBox="0 0 24 24" stroke="#3D4D8C"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div>
+        <h3>Hablas con tu abogada, de verdad</h3>
+        <p>Te atendemos por videollamada desde donde estés, con tu caso a la vista. Porque cuando algo te preocupa, quieres hablar con una persona que te escuche, no llenar otro formulario.</p>
+        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Cercanía, aunque sea en línea</span>
+      </div>
+
+      <div class="care reveal">
+        <div class="ico" style="background:#E4F3EC"><svg viewBox="0 0 24 24" stroke="#4FA079"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Sigues tu caso sin perderte</h3>
+        <p>Entras a tu panel privado y ves en qué va todo: lo que ya está hecho, lo que viene y tus documentos a mano. Y te avisamos por correo cada vez que hay una novedad, sin que tengas que estar preguntando.</p>
+        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Siempre sabes dónde está tu trámite</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TARIFAS -->
+<section class="band band-cream2" id="tarifas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Catálogo de servicios</span>
+      <h2>16 tipologías con tarifa plana publicada</h2>
+      <p>En una industria donde el precio siempre se cotiza caso a caso, aquí lo conoces desde el primer clic. Valores referenciales de honorarios profesionales.</p>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-gh"><span class="tag" style="background:#33406F">★ Destacados</span><h3>Los más contratados</h3></div>
+      <div class="cat-grid" id="grid-destacados"></div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-gh"><span class="tag" style="background:#E8915B">Derecho de familia</span><h3>Familia</h3></div>
+      <div class="cat-grid" id="grid-familia"></div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-gh"><span class="tag" style="background:#5E7FA6">Derecho migratorio</span><h3>Migración</h3></div>
+      <div class="cat-grid" id="grid-migracion"></div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-gh"><span class="tag" style="background:#B98A33">Escrituras y trámites</span><h3>Escrituras y trámites</h3></div>
+      <div class="cat-grid" id="grid-escrituras"></div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-gh"><span class="tag" style="background:#7E6BB0">Propiedad industrial</span><h3>Marcas</h3></div>
+      <div class="cat-grid" id="grid-marcas"></div>
+    </div>
+
+    <p class="cat-note reveal">Los valores corresponden exclusivamente a <b>honorarios profesionales</b>. Los aranceles notariales (escrituras públicas), administrativos (Registro Civil, Conservador, Servicio Nacional de Migraciones) y las tasas de INAPI son ajenos al servicio y se informan con total transparencia desde el inicio. En los juicios, los plazos parten desde 4 meses y quedan sujetos a la agenda del respectivo tribunal.</p>
+  </div>
+</section>
+
+<!-- OTROS CASOS -->
+<section class="band band-cream2">
+  <div class="wrap">
+    <div class="otros reveal">
+      <div class="oic"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div>
+      <h3>¿Tu caso no está en la lista?</h3>
+      <p>Si necesitas otro servicio o no estás seguro/a de cuál es tu trámite, <b>regístrate y agenda tu atención por videollamada</b> con tu abogada/o. La primera atención es <b>gratuita</b>.</p>
+      <button class="btn btn-coral" onclick="location.href='/contratar/otros'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Regístrate y agenda — primera atención gratuita
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL DEL CLIENTE -->
+<section class="band band-cream" id="panel">
+  <div class="wrap panel-grid">
+    <div class="reveal">
+      <span class="eyebrow">Panel del cliente</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);color:var(--blue-ink);margin:.5rem 0 .8rem">Sigue tu caso en línea, paso a paso</h2>
+      <p style="color:var(--muted);font-size:1.05rem">Cada cliente tiene un panel privado donde ve el estado de su trámite, los hitos completados y pendientes, los plazos relevantes y los documentos del caso. Recibe notificaciones automáticas por correo y WhatsApp cada vez que hay novedades.</p>
+      <div style="margin-top:1.6rem">
+        <button class="btn btn-blue" onclick="openDiag()">Comenzar con mi diagnóstico</button>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="panel-card">
+        <div class="panel-top">
+          <div><div class="h">Hola, María</div><div class="s">Tu caso está en curso</div></div>
+          <div class="av">MJ</div>
+        </div>
+        <div class="panel-body">
+          <div class="case-box">
+            <div class="t">Divorcio común acuerdo</div>
+            <div class="n">Causa N° C-1234-2026</div>
+            <div class="j">Juzgado de Familia de La Serena</div>
+          </div>
+          <div class="tl-title">Hitos del proceso</div>
+          <ul class="tl">
+            <li class="done"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Diagnóstico realizado</li>
+            <li class="done"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Documentos firmados</li>
+            <li class="done"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Demanda ingresada</li>
+            <li class="now"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>Audiencia agendada</li>
+            <li class="todo"><span class="ic"></span>Sentencia notificada</li>
+          </ul>
+          <div class="note-box">
+            <div class="t">Próxima notificación</div>
+            <div class="v">Audiencia · 18 de junio, 10:30 hrs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <span class="eyebrow" style="color:var(--coral)">El derecho no debería ser un misterio</span>
+  <h2>Empieza con un diagnóstico gratuito</h2>
+  <p>En menos de cinco minutos sabrás qué tipo de trámite necesitas, cuánto cuesta y cuáles son los próximos pasos. Sin compromiso.</p>
+  <div class="hero-cta">
+    <button class="btn btn-coral" onclick="openDiag()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.5 14.5 4 20"/><circle cx="13" cy="9" r="6"/></svg>
+      Diagnóstico gratuito
+    </button>
+    <a href="mailto:contacto@defensaalma.cl" class="btn btn-ghost">contacto@defensaalma.cl</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <img src="assets/figura-crema.png" alt="Defensa Alma">
+  <p class="name">Defensa Alma</p>
+  <p class="sub">ESTUDIO JURÍDICO</p>
+  <div class="contact">
+    <a href="https://defensaalma.cl">defensaalma.cl</a><br>
+    <a href="mailto:contacto@defensaalma.cl">contacto@defensaalma.cl</a>
+  </div>
+  <p class="legal">Plataforma legaltech de servicios jurídicos prestados por abogada habilitada. Tarifas planas publicadas en honorarios profesionales; aranceles notariales y administrativos son ajenos al servicio y se informan por separado. Toda contratación incluye contrato escrito de prestación de servicios.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <div class="modal-head"><span class="t" id="mTitle">Diagnóstico gratuito</span><button class="x" onclick="closeModal()" aria-label="Cerrar">✕</button></div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+/* ---- Reveal ---- */
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---- Hero: mini-demo animado del flujo ---- */
+(function(){
+ const CK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+ const FRAMES=[
+  {url:'defensaalma.cl/diagnostico', html:`
+   <div class="bw-step">Paso 1 de 4 · Diagnóstico</div><div class="bw-prog"><span style="width:25%"></span></div>
+   <div class="bw-q">¿En qué necesitas ayuda?</div>
+   <div class="bw-opt sel"><span class="rd"></span><div>Familia<small>Divorcio, alimentos, RDR</small></div></div>
+   <div class="bw-opt"><span class="rd"></span><div>Migración<small>Visas, residencias, recursos</small></div></div>
+   <div class="bw-opt"><span class="rd"></span><div>Escrituras y trámites<small>Poderes, compraventas, marcas</small></div></div>`},
+  {url:'defensaalma.cl/diagnostico', html:`
+   <div class="bw-step">Paso 2 de 4 · Familia</div><div class="bw-prog"><span style="width:50%"></span></div>
+   <div class="bw-q">¿Qué necesitas resolver?</div>
+   <div class="bw-opt sel"><span class="rd"></span><div>Divorcio de común acuerdo<small>Tarifa fija $200.000</small></div></div>
+   <div class="bw-opt"><span class="rd"></span><div>Demanda de alimentos<small>Tarifa fija $300.000</small></div></div>
+   <div class="bw-result"><div class="l">Diagnóstico inmediato</div><div class="v">Divorcio de común acuerdo</div><div class="p">$200.000 · desde 4 meses, sujeto a agenda</div></div>`},
+  {url:'defensaalma.cl/cotizacion', html:`
+   <div class="bw-step">Paso 3 · Cotización</div><div class="bw-prog"><span style="width:75%"></span></div>
+   <div class="bw-result"><div class="l">Derecho de familia</div><div class="v">Divorcio de común acuerdo</div><div class="p">Total: <b>$200.000</b> · tarifa fija</div></div>
+   <div class="bw-sub" style="margin-top:.7rem"><b>Incluye:</b> solicitud, acuerdo regulador y representación hasta la sentencia.</div>
+   <div class="bw-btn">Continuar a mis datos</div>`},
+  {url:'defensaalma.cl/registro', html:`
+   <div class="bw-center"><div class="bw-check">${CK}</div>
+   <div class="bw-q" style="text-align:center">¡Hola, María!</div>
+   <div class="bw-sub">Tu cuenta y tu enlace de seguimiento están listos</div></div>
+   <div class="bw-fakelink"><input value="defensaalma.cl/portal?acceso=P884RB" readonly><span>Copiar</span></div>
+   <div class="bw-btn">Continuar al pago con Webpay</div>`},
+  {url:'webpay.transbank.cl', html:`
+   <div class="bw-center"><div class="bw-check">${CK}</div>
+   <div class="bw-q" style="text-align:center">Pago aprobado</div>
+   <div class="bw-amt">$200.000</div>
+   <div class="bw-sub">Transbank Webpay · boleta enviada a tu correo</div></div>`},
+  {url:'defensaalma.cl/videollamada', html:`
+   <div class="bw-step">Atención · Videollamada</div>
+   <div class="bw-center"><div class="bw-check" style="background:#E7EAF5"><svg viewBox="0 0 24 24" fill="none" stroke="#3D4D8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div>
+   <div class="bw-q" style="text-align:center">Videollamada con tu abogada/o</div>
+   <div class="bw-sub">Jueves 18 de junio · 10:00 hrs · en el navegador, sin descargas</div></div>
+   <div class="bw-btn">Entrar a la sala</div>`},
+  {url:'defensaalma.cl/mi-causa', html:`
+   <div class="bw-step">Panel · Causa C-1234-2026</div>
+   <div class="bw-q" style="font-size:1.15rem;margin-bottom:.6rem">Hola, María</div>
+   <div class="bw-line done"><span class="c">${CK}</span>Diagnóstico realizado</div>
+   <div class="bw-line done"><span class="c">${CK}</span>Documentos firmados</div>
+   <div class="bw-line done"><span class="c">${CK}</span>Demanda ingresada</div>
+   <div class="bw-line now"><span class="c"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="currentColor"/></svg></span>Audiencia agendada</div>
+   <div class="bw-line todo"><span class="c"></span>Sentencia notificada</div>`},
+ ];
+ const scr=document.getElementById('bwScreen'), url=document.getElementById('bwUrl'), dotsEl=document.getElementById('bwDots');
+ if(!scr) return;
+ let i=0, timer;
+ dotsEl.innerHTML=FRAMES.map((_,k)=>`<i data-i="${k}"></i>`).join('');
+ const dots=[...dotsEl.children];
+ function render(k){
+   i=k; scr.style.opacity=0; scr.style.transform='translateY(8px)';
+   setTimeout(()=>{ scr.innerHTML=FRAMES[k].html; url.textContent=FRAMES[k].url; scr.style.opacity=1; scr.style.transform='none'; },180);
+   dots.forEach((d,j)=>d.classList.toggle('on',j===k));
+ }
+ function start(){ timer=setInterval(()=>render((i+1)%FRAMES.length), 2300); }
+ scr.innerHTML=FRAMES[0].html; url.textContent=FRAMES[0].url; dots[0].classList.add('on');
+ start();
+ dots.forEach(d=>d.onclick=()=>{ clearInterval(timer); render(+d.dataset.i); start(); });
+ const card=scr.closest('.bw');
+ if(card){ card.addEventListener('mouseenter',()=>clearInterval(timer)); card.addEventListener('mouseleave',start); }
+})();
+
+/* ---- Nav ---- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+
+/* ---- Modal ---- */
+const modal=document.getElementById('modal'),mBody=document.getElementById('mBody'),mTitle=document.getElementById('mTitle');
+function closeModal(){modal.classList.remove('open')}
+function showModal(){modal.classList.add('open')}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* ---- Catálogo: única fuente de verdad (área ↔ tipología ↔ tarifa) ---- */
+const f=n=>'$'+n.toLocaleString('es-CL');
+const AREAS={familia:'Derecho de familia',migracion:'Derecho migratorio',escrituras:'Escrituras y trámites',marcas:'Propiedad industrial'};
+const CATALOG=[
+ {id:'div',area:'familia',name:'Divorcio de común acuerdo',price:200000,plazo:'Desde 4 meses, sujeto a agenda del tribunal',incluye:'Redacción y presentación de la solicitud conjunta, acuerdo completo regulador y representación hasta la sentencia.',requiere:'Certificado de matrimonio y cédulas de ambas partes.',feat:'Más solicitado'},
+ {id:'ali',area:'familia',name:'Demanda de alimentos',price:300000,plazo:'Desde 4 meses, sujeto a agenda del tribunal',incluye:'Demanda, representación en audiencia y gestión de la resolución.',requiere:'Comprobantes de ingresos del demandado (si los tienes) y de los gastos del menor.'},
+ {id:'rdr',area:'familia',name:'Regulación de relación directa y regular',price:350000,plazo:'Desde 4 meses, sujeto a agenda del tribunal',incluye:'Solicitud o demanda, propuesta de régimen y representación.',requiere:'Datos de los hijos y antecedentes de la relación parental.'},
+ {id:'sal',area:'familia',name:'Autorización judicial de salida del país',price:220000,plazo:'Desde 4 meses, sujeto a agenda del tribunal',incluye:'Solicitud, representación y gestión de la autorización.',requiere:'Datos del viaje y del otro progenitor.'},
+ {id:'vtemp',area:'migracion',name:'Solicitud de visa temporal',price:240000,plazo:'Según SNM',incluye:'Preparación y presentación de la solicitud ante el Servicio Nacional de Migraciones.',requiere:'Pasaporte vigente, antecedentes y documentos según la categoría de visa.'},
+ {id:'pdef',area:'migracion',name:'Solicitud de permanencia definitiva',price:280000,plazo:'Según SNM',incluye:'Preparación y presentación de la solicitud de permanencia definitiva.',requiere:'Visa vigente y acreditación del tiempo de residencia.'},
+ {id:'rec',area:'migracion',name:'Recurso administrativo ante rechazo SNM',price:350000,plazo:'Plazo acotado',incluye:'Análisis del rechazo y presentación del recurso administrativo correspondiente.',requiere:'Resolución de rechazo y antecedentes del caso.',hot:true},
+ {id:'hijo',area:'migracion',name:'Reconocimiento e inscripción de hijo de migrante',price:180000,plazo:'Según Registro Civil',incluye:'Gestión del reconocimiento e inscripción ante el Registro Civil.',requiere:'Certificado de nacimiento y documentos de identidad de los padres.'},
+ {id:'mand',area:'escrituras',name:'Mandato general o especial (poder)',price:80000,plazo:'24 a 48 hrs',incluye:'Redacción del poder según las facultades que necesites otorgar.',requiere:'Datos del mandante, del mandatario y facultades requeridas.',hot:true},
+ {id:'prom',area:'escrituras',name:'Promesa de compraventa',price:250000,plazo:'Según las partes',incluye:'Redacción de la promesa con las condiciones acordadas.',requiere:'Antecedentes del inmueble y de las partes.'},
+ {id:'cv',area:'escrituras',name:'Compraventa de bien raíz (redacción)',price:400000,plazo:'Según trámite',incluye:'Redacción de la escritura de compraventa.',requiere:'Antecedentes del inmueble y de las partes. Los aranceles notariales y del Conservador son aparte.'},
+ {id:'liq',area:'escrituras',name:'Liquidación de sociedad conyugal',price:500000,plazo:'Variable',incluye:'Redacción y gestión de la liquidación del régimen patrimonial.',requiere:'Antecedentes de los bienes y del matrimonio.'},
+ {id:'pos',area:'escrituras',name:'Posesión efectiva intestada',price:250000,plazo:'2 a 4 meses',incluye:'Tramitación completa de la posesión efectiva de la herencia.',requiere:'Certificado de defunción y antecedentes de los bienes y herederos.'},
+ {id:'nom',area:'escrituras',name:'Cambio de nombre o rectificación de partida',price:200000,plazo:'4 a 8 meses',incluye:'Solicitud y gestión del cambio o rectificación.',requiere:'Partida a rectificar y antecedentes que fundan la solicitud.'},
+ {id:'mera',area:'escrituras',name:'Escritos de mera tramitación, sin patrocinio de abogado',price:20000,plazo:'48 horas hábiles',incluye:'Redacción de escritos de mera tramitación para una causa en curso. No incluye patrocinio ni poder: el escrito lo presenta quien ya tiene la causa.',requiere:'Rol y tribunal de la causa, y la actuación o escrito específico requerido.',hot:true},
+ {id:'marca',area:'marcas',name:'Registro de marca en INAPI',price:150000,plazo:'4 a 8 meses (según INAPI)',incluye:'Búsqueda de antecedentes, preparación y presentación de la solicitud de registro ante INAPI y seguimiento hasta la resolución.',requiere:'Nombre o signo a registrar, clases de productos o servicios y datos del solicitante.',feat:'Nuevo'}
+];
+const byArea=a=>CATALOG.filter(s=>s.area===a);
+const get=id=>CATALOG.find(s=>s.id===id);
+
+/* ---- Tarjetas de tarifa: cada una inicia el trámite ---- */
+function priceCard(s){
+ const badge = s.hot ? '★ Destacado' : s.feat;
+ const cls = 'price-card'+((s.feat||s.hot)?' feat':'')+(s.hot?' hot':'');
+ return `<div class="${cls}" onclick="openCoti('${s.id}')" role="button" tabindex="0">${badge?`<span class="star${s.hot?' star-hot':''}">${badge}</span>`:''}<h4>${s.name}</h4><div class="amt">${f(s.price)}</div><span class="go">Cotizar e iniciar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>`;
+}
+// Los destacados aparecen solo en su franja; cada área muestra el resto, sin repetir.
+['familia','migracion','escrituras','marcas'].forEach(a=>{const el=document.getElementById('grid-'+a);if(el)el.innerHTML=byArea(a).filter(s=>!s.hot).map(priceCard).join('')});
+const dest=document.getElementById('grid-destacados');if(dest)dest.innerHTML=CATALOG.filter(s=>s.hot).map(priceCard).join('');
+
+/* ---- Diagnóstico automatizado: área → tipología → tarifa inmediata ---- */
+function openDiag(area){
+ mTitle.textContent='Diagnóstico gratuito';
+ if(area){return diagArea(area)}
+ mBody.innerHTML=`
+  <div class="progress"><span style="width:33%"></span></div>
+  <p class="step-label">Paso 1 de 3</p>
+  <p class="q-title">¿En qué área necesitas ayuda?</p>
+  ${Object.keys(AREAS).map(k=>`<button class="opt" onclick="diagArea('${k}')"><span class="od"></span>${AREAS[k]}<small>${byArea(k).length} trámites con tarifa fija</small></button>`).join('')}
+  <button class="opt" onclick="diagOtros()"><span class="od"></span>Mi caso no está en la lista<small>Atención por videollamada · primera vez gratis</small></button>`;
+ showModal();
+}
+function diagOtros(){
+ mTitle.textContent='Otros casos';
+ mBody.innerHTML=`
+  <div class="demo-visual"><div class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div></div>
+  <p class="q-title" style="text-align:center">¿Necesitas otra cosa?</p>
+  <p style="text-align:center;color:var(--muted)">Si tu caso no está en el catálogo, regístrate y agenda tu atención por videollamada con tu abogada/o. <b style="color:var(--coral-deep)">La primera atención es gratuita.</b></p>
+  <a href="/contratar/otros" class="btn btn-coral" style="width:100%;margin-top:1.2rem;justify-content:center">Regístrate y agenda — primera atención gratuita</a>
+  <button class="back-link" onclick="openDiag()">← Volver</button>`;
+}
+function diagArea(k){
+ mTitle.textContent='Diagnóstico gratuito';
+ mBody.innerHTML=`
+  <div class="progress"><span style="width:66%"></span></div>
+  <p class="step-label">Paso 2 de 3 · ${AREAS[k]}</p>
+  <p class="q-title">¿Qué necesitas resolver?</p>
+  ${byArea(k).map(s=>`<button class="opt" onclick="diagResult('${s.id}')"><span class="od"></span>${s.name}<small>Tarifa fija ${f(s.price)}</small></button>`).join('')}
+  <button class="back-link" onclick="openDiag()">← Volver</button>`;
+ showModal();
+}
+function diagResult(id){
+ const s=get(id);
+ mBody.innerHTML=`
+  <div class="progress"><span style="width:100%"></span></div>
+  <p class="step-label">Diagnóstico inmediato</p>
+  <div class="result-box">
+    <p class="rl">${AREAS[s.area]}</p>
+    <h4>${s.name}</h4>
+    <p class="meta"><b>Tarifa fija:</b> <span style="color:var(--coral-deep);font-weight:700">${f(s.price)}</span>&nbsp;·&nbsp;<b>Plazo estimado:</b> ${s.plazo}</p>
+  </div>
+  <p style="font-size:.9rem;color:var(--muted)"><b style="color:var(--blue-ink)">Incluye:</b> ${s.incluye}</p>
+  <button class="btn btn-coral" style="width:100%;margin-top:1.2rem" onclick="openCoti('${s.id}')">Continuar a cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+  <button class="back-link" onclick="diagArea('${s.area}')">← Elegir otro trámite</button>`;
+}
+
+/* ---- Cotización → Pago Webpay → Agenda (automatizado, sin WhatsApp) ---- */
+function openCoti(id){
+ const s=get(id);mTitle.textContent='Tu cotización';
+ mBody.innerHTML=`
+  <div class="result-box">
+    <p class="rl">${AREAS[s.area]}</p>
+    <h4>${s.name}</h4>
+    <p class="meta"><b>Total a pagar:</b> <span style="font-size:1.2rem;color:var(--coral-deep);font-weight:700">${f(s.price)}</span> · tarifa fija</p>
+  </div>
+  <div class="coti-block"><p class="coti-l">Qué incluye</p><p>${s.incluye}</p></div>
+  <div class="coti-block"><p class="coti-l">Plazo estimado</p><p>${s.plazo}</p></div>
+  <div class="coti-block"><p class="coti-l">Antecedentes que te pediremos</p><p>${s.requiere}</p></div>
+  <button class="btn btn-coral" style="width:100%;margin-top:1.2rem" onclick="location.href='/contratar/${s.id}'">Continuar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+  <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:.6rem">Siguiente: tus datos y pago seguro con Webpay</p>
+  <button class="back-link" onclick="diagResult('${s.id}')">← Volver</button>`;
+ showModal();
+}
+
+/* ---- Registro del cliente → enlace de seguimiento → pago ---- */
+let CLIENT=null;
+const cleanRut=v=>v.replace(/[^0-9kK]/g,'').toUpperCase();
+function validRut(v){v=cleanRut(v);if(v.length<2)return false;const body=v.slice(0,-1),dv=v.slice(-1);if(!/^\d+$/.test(body))return false;let sum=0,mul=2;for(let i=body.length-1;i>=0;i--){sum+=+body[i]*mul;mul=mul===7?2:mul+1}const res=11-(sum%11);const calc=res===11?'0':res===10?'K':String(res);return calc===dv}
+function fmtRut(v){v=cleanRut(v);if(v.length<2)return v;let b=v.slice(0,-1),d=v.slice(-1);b=b.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return b+'-'+d}
+const genToken=()=>(Math.random().toString(36).slice(2,8)+Math.random().toString(36).slice(2,8)).toUpperCase();
+const setInvalid=(fid,bad)=>document.getElementById(fid).classList.toggle('invalid',bad);
+function registroCliente(id){
+ const s=get(id);mTitle.textContent='Tus datos';
+ mBody.innerHTML=`
+  <p class="step-label">Antes de pagar · Crea tu cuenta</p>
+  <p class="q-title" style="margin-bottom:.4rem">Regístrate para seguir tu caso</p>
+  <p style="font-size:.88rem;color:var(--muted);margin-bottom:1.1rem">Con estos datos creamos tu cuenta y el enlace privado donde podrás seguir tu trámite en línea.</p>
+  <div class="field" id="f-nom"><label>Nombre completo</label><input id="i-nom" placeholder="Ej: María José Pérez Soto" autocomplete="name"><div class="err">Ingresa tu nombre completo.</div></div>
+  <div class="field" id="f-rut"><label>RUT</label><input id="i-rut" placeholder="12.345.678-9" oninput="this.value=fmtRut(this.value)"><div class="err">Ingresa un RUT válido.</div></div>
+  <div class="field" id="f-dom"><label>Domicilio</label><input id="i-dom" placeholder="Calle, número, comuna, ciudad" autocomplete="street-address"><div class="err">Ingresa tu domicilio.</div></div>
+  <div class="field" id="f-cor"><label>Correo electrónico</label><input id="i-cor" type="email" placeholder="tu@correo.cl" autocomplete="email" inputmode="email"><div class="err">Ingresa un correo electrónico válido.</div></div>
+  <button class="btn btn-coral" style="width:100%;margin-top:.5rem" onclick="crearCuenta('${s.id}')">Crear mi cuenta y continuar</button>
+  <p style="text-align:center;font-size:.74rem;color:var(--muted);margin-top:.6rem">Tus datos se usan solo para tu causa y se almacenan de forma cifrada.</p>
+  <button class="back-link" onclick="openCoti('${s.id}')">← Volver</button>`;
+ showModal();
+}
+function crearCuenta(id){
+ const nom=document.getElementById('i-nom').value.trim();
+ const rut=document.getElementById('i-rut').value.trim();
+ const dom=document.getElementById('i-dom').value.trim();
+ const cor=document.getElementById('i-cor').value.trim();
+ let ok=true;
+ const bNom=nom.length<5;setInvalid('f-nom',bNom);if(bNom)ok=false;
+ const bRut=!validRut(rut);setInvalid('f-rut',bRut);if(bRut)ok=false;
+ const bDom=dom.length<5;setInvalid('f-dom',bDom);if(bDom)ok=false;
+ const bCor=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cor);setInvalid('f-cor',bCor);if(bCor)ok=false;
+ if(!ok)return;
+ const token=genToken();
+ CLIENT={nom,rut:fmtRut(rut),dom,cor,token,id};
+ const link='https://defensaalma.cl/portal?acceso='+token;
+ mTitle.textContent='Cuenta creada';
+ mBody.innerHTML=`
+  <div class="demo-visual"><div class="big" style="background:#E4F3EC"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA079" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <p class="q-title" style="text-align:center">¡Hola, ${nom.split(' ')[0]}!</p>
+  <p style="text-align:center;color:var(--muted)">Tu cuenta quedó creada. Este es tu enlace privado para seguir tu causa en línea:</p>
+  <div class="coti-block" style="margin-top:1rem"><p class="coti-l">Tu enlace de seguimiento</p>
+    <div class="linkbox"><input id="acc-link" value="${link}" readonly onclick="this.select()"><button onclick="copyLink(this)">Copiar</button></div>
+  </div>
+  <div class="coti-block"><p class="coti-l">Titular</p><p>${nom}<br>${fmtRut(rut)} · ${dom}<br>${cor}</p></div>
+  <div class="demo-note">Te enviamos este enlace a <b>${cor}</b> y por WhatsApp. Con él entras a tu panel —como el de "Hola, María"— para ver hitos, plazos y documentos del caso. <b>Demo:</b> en la plataforma el enlace es único, seguro y de un solo uso.</div>
+  <button class="btn btn-coral" style="width:100%;margin-top:.4rem" onclick="payWebpay('${id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Continuar al pago de ${f(get(id).price)} con Webpay</button>
+  <button class="back-link" onclick="registroCliente('${id}')">← Editar mis datos</button>`;
+}
+function copyLink(btn){const el=document.getElementById('acc-link');el.select();try{navigator.clipboard.writeText(el.value)}catch(e){try{document.execCommand('copy')}catch(_){}}const t=btn.textContent;btn.textContent='¡Copiado!';setTimeout(()=>btn.textContent=t,1400)}
+function payWebpay(id){
+ const s=get(id);mTitle.textContent='Procesando pago';
+ mBody.innerHTML=`<div class="demo-visual"><div class="spinner"></div></div><p class="q-title" style="text-align:center;margin-top:1.2rem">Redirigiendo a Webpay…</p><p style="text-align:center;color:var(--muted)">Pago seguro de ${f(s.price)} con Transbank.</p>`;
+ setTimeout(()=>payDone(id),1700);
+}
+function payDone(id){
+ const s=get(id);mTitle.textContent='¡Listo!';
+ const nom=CLIENT?CLIENT.nom.split(' ')[0]:'';
+ const linkrow=CLIENT?`<div class="coti-block"><p class="coti-l">Tu enlace de seguimiento</p><div class="linkbox"><input id="acc-link" value="https://defensaalma.cl/portal?acceso=${CLIENT.token}" readonly onclick="this.select()"><button onclick="copyLink(this)">Copiar</button></div></div>`:'';
+ mBody.innerHTML=`
+  <div class="demo-visual"><div class="big" style="background:#E4F3EC"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA079" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <p class="q-title" style="text-align:center">${nom?('Gracias, '+nom):'Trámite iniciado'}</p>
+  <p style="text-align:center;color:var(--muted)">Pagaste ${f(s.price)} por <b>${s.name}</b>. Tu caso y tu panel de seguimiento ya están activos.</p>
+  ${linkrow}
+  <div class="coti-block"><p class="coti-l">Próximo paso</p><p>Agenda tu videollamada con la abogada para validar antecedentes y revisar el expediente.</p></div>
+  <button class="btn btn-coral" style="width:100%;margin-top:.5rem" onclick="agendaDemo('${s.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Agendar videollamada</button>
+  <div class="demo-note"><b>Demo del MVP.</b> Diagnóstico, cotización, pago Webpay, agenda y panel funcionan de forma automática en la plataforma. En esta vista previa los proveedores de pago y video están simulados.</div>
+  <button class="back-link" onclick="closeModal()">Cerrar</button>`;
+}
+function agendaDemo(id){
+ mTitle.textContent='Agenda tu videollamada';
+ const slots=['Mañana · 10:00','Mañana · 16:30','Jueves · 11:00','Viernes · 09:30'];
+ mBody.innerHTML=`
+  <p class="step-label">Horarios disponibles</p>
+  <p class="q-title">Elige un bloque</p>
+  ${slots.map(t=>`<button class="opt" onclick="agendaDone('${t}')"><span class="od"></span>${t} hrs</button>`).join('')}
+  <div class="demo-note">Demo: en la plataforma estos bloques se sincronizan con el calendario real de la abogada.</div>`;
+}
+function agendaDone(t){
+ mBody.innerHTML=`
+  <div class="demo-visual"><div class="big" style="background:#E4F3EC"><svg viewBox="0 0 24 24" fill="none" stroke="#4FA079" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+  <p class="q-title" style="text-align:center">Videollamada agendada</p>
+  <p style="text-align:center;color:var(--muted)">Te esperamos el <b>${t} hrs</b>. Recibirás el enlace y los recordatorios automáticos por correo y WhatsApp.</p>
+  <button class="btn btn-blue" style="width:100%;margin-top:1rem" onclick="closeModal()">Entendido</button>`;
+}
+
+/* ---- Demos de integración ---- */
+const DEMOS={
+ pago:{t:'Pago con Webpay',ic:'<rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>',h:'Pago seguro con Webpay Plus',p:'El cliente paga la tarifa plana con tarjeta de crédito, débito o prepago a través de Transbank Webpay, incluso en cuotas. Recibe boleta automática y agenda su videollamada en el mismo paso.'},
+ video:{t:'Videollamada',ic:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/>',h:'Atención por videollamada en el navegador',p:'Sesión sincrónica entre el cliente y la abogada, sin descargar nada, con todos los documentos del expediente a la vista y registro grabado de la sesión.'}
+};
+function openDemo(k){
+ const d=DEMOS[k];mTitle.textContent='Demo · '+d.t;
+ mBody.innerHTML=`
+  <div class="demo-visual"><div class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d.ic}</svg></div></div>
+  <p class="q-title" style="text-align:center">${d.h}</p>
+  <p style="text-align:center;color:var(--muted)">${d.p}</p>
+  <div class="demo-note"><b>Vista previa.</b> Este módulo se conecta a los proveedores reales (Transbank Webpay y video) en la etapa de desarrollo del MVP.</div>
+  <button class="btn btn-blue" style="width:100%;margin-top:1rem" onclick="closeModal()">Entendido</button>`;
+ showModal();
+}
+</script>
+</body>
+</html>
