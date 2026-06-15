@@ -36,7 +36,7 @@ app.use(session({
   resave: false, saveUninitialized: false,
   cookie: { httpOnly: true, sameSite: 'lax', secure: String(process.env.SECURE_COOKIES) === 'true' },
 }));
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // sirve index.html y /assets/... en la raíz
 
 // ---------- utilidades ----------
 const clp = n => '$' + Number(n).toLocaleString('es-CL');
