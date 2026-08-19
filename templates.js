@@ -69,7 +69,12 @@ function clientPortal(c, milestones, notifications, documents = [], appt = null,
         <p>Para iniciar tu trámite, paga la tarifa fija de <b>${clp(c.price)}</b> con Webpay.</p>
         <form method="POST" action="/pay/start/${c.id}" style="margin-top:1rem"><button class="btn full">Pagar ${clp(c.price)} con Webpay</button></form>
         <p class="muted" style="text-align:center;margin-top:.5rem">Pago seguro · Transbank Webpay</p></div>`
-    : (appt
+    : (c.service_id === 'calc'
+        ? `<div class="card"><div class="eyebrow">Tu planilla</div>
+            <p>Pago confirmado. Ya puedes descargar tu <b>Calculadora de pensión de alimentos</b> en Excel.</p>
+            <a class="btn full" style="margin-top:.6rem" href="/portal/${c.token}/calculadora">Descargar la planilla (Excel)</a>
+            <p class="muted" style="text-align:center;margin-top:.5rem">Guarda este enlace: puedes descargarla las veces que necesites.</p></div>`
+        : appt
         ? `<div class="card"><div class="eyebrow">Tu videollamada</div>
             <p><b>${esc(appt.label)}</b>${Number(c.price) <= 0 ? ' · primera atención gratuita' : ''}</p>
             <a class="btn full" style="margin-top:.6rem" href="${roomUrl(appt.room)}" target="_blank" rel="noopener">Entrar a la videollamada</a>
