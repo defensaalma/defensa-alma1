@@ -366,8 +366,20 @@ footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:cent
   .nav.open .nav-cta{display:flex;flex-direction:column;width:100%;gap:.6rem;padding:.2rem 0 .9rem;align-items:stretch}
   .nav.open .nav-login{padding:.5rem 0}
 }
-@media(max-width:560px){.flow{grid-template-columns:1fr 1fr}}
-@media(max-width:400px){.flow{grid-template-columns:1fr}}
+@media(max-width:560px){
+  .hero{padding:5.2rem 0 2.6rem}
+  .hero h1{font-size:1.6rem;line-height:1.2}
+  .hero-pill{margin-bottom:.9rem;font-size:.75rem}
+  .hsearch{margin-top:1.2rem}
+  .hsearch-q{font-size:1.25rem}
+  .hsearch-bar{padding-left:.85rem}
+  .hsearch-bar .btn{padding:.65rem 1rem;font-size:.86rem}
+  .hero-cta{gap:.6rem;margin-top:1.4rem}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .hero-stat{margin-top:1.2rem}
+  .band{padding:3.4rem 0}
+  .calc-card{padding:1.35rem 1.15rem}
+}
 </style>
 </head>
 <body>
@@ -380,8 +392,6 @@ footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:cent
     <div class="nav-links">
       <a href="#tarifas">Tarifas</a>
       <a href="#calculadora">Calculadora</a>
-      <a href="#como">Cómo funciona</a>
-      <a href="#plataforma">La plataforma</a>
     </div>
     <div class="nav-cta">
       <a href="#" class="nav-login" onclick="openDiag();return false">Ingresar</a>
@@ -509,64 +519,6 @@ footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:cent
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Regístrate y agenda tu asesoría ($15.000)
       </button>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="band band-cream2" id="como">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Flujo de usuario</span>
-      <h2>Seis pasos, del primer contacto al cierre</h2>
-      <p>Entiendes tu situación, conoces el costo desde el inicio y resuelves en línea, con respaldo profesional en cada etapa.</p>
-    </div>
-    <div class="flow reveal">
-      <div class="fstep"><div class="fnum">1</div><h4>Ingreso</h4><p>Llegas a la plataforma y cuentas qué necesitas.</p></div>
-      <div class="fstep"><div class="fnum">2</div><h4>Diagnóstico</h4><p>Entrevista guiada de 3–5 min que clasifica tu caso.</p></div>
-      <div class="fstep"><div class="fnum">3</div><h4>Cotización</h4><p>Tipología, plazos y tarifa plana al instante.</p></div>
-      <div class="fstep"><div class="fnum">4</div><h4>Pago y agenda</h4><p>Pagas con Webpay y agendas tu videollamada.</p></div>
-      <div class="fstep"><div class="fnum">5</div><h4>Atención</h4><p>Videollamada con la abogada, con el expediente a la vista.</p></div>
-      <div class="fstep"><div class="fnum">6</div><h4>Seguimiento</h4><p>Panel privado con hitos, plazos y notificaciones.</p></div>
-    </div>
-    <div class="fmeta reveal">
-      <div class="c"><b>3–5 min</b><span>Diagnóstico inicial</span><br><em>Sin agendar entrevista</em></div>
-      <div class="c"><b>48 hrs</b><span>Preparación documental</span><br><em>Borradores listos para validación</em></div>
-      <div class="c"><b>Tarifa fija</b><span>Sin sorpresas</span><br><em>El precio se conoce desde el inicio</em></div>
-    </div>
-  </div>
-</section>
-
-<!-- PLATAFORMA / ACOMPAÑAMIENTO -->
-<section class="band band-cream" id="plataforma">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Cómo te acompañamos</span>
-      <h2>Para que lo legal deje de ser un dolor de cabeza</h2>
-    </div>
-    <div class="care-grid">
-
-      <div class="care reveal">
-        <div class="ico" style="background:#FAF3E1"><svg viewBox="0 0 24 24" stroke="#A8842E"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.2 1 2.5h6c0-1.3.3-1.8 1-2.5A6 6 0 0 0 12 3Z"/></svg></div>
-        <h3>Sabes qué necesitas de inmediato</h3>
-        <p>Respondes unas pocas preguntas y, en minutos, te decimos qué trámite te corresponde, cuánto cuesta y cuánto demora. En palabras simples, sin letra chica y sin compromiso.</p>
-        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Tu primer paso es gratis</span>
-      </div>
-
-      <div class="care reveal">
-        <div class="ico" style="background:#EFE6F6"><svg viewBox="0 0 24 24" stroke="#6A2391"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div>
-        <h3>Hablas con tu abogada, de verdad</h3>
-        <p>Te atendemos por videollamada desde donde estés, con tu caso a la vista. Porque cuando algo te preocupa, quieres hablar con una persona que te escuche, no llenar otro formulario.</p>
-        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Cercanía, aunque sea en línea</span>
-      </div>
-
-      <div class="care reveal">
-        <div class="ico" style="background:#E4F3EC"><svg viewBox="0 0 24 24" stroke="#4FA079"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h3>Sigues tu caso sin perderte</h3>
-        <p>Entras a tu panel privado y ves en qué va todo: lo que ya está hecho, lo que viene y tus documentos a mano. Y te avisamos por correo cada vez que hay una novedad, sin que tengas que estar preguntando.</p>
-        <span class="kicker"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>Siempre sabes dónde está tu trámite</span>
-      </div>
-
     </div>
   </div>
 </section>
