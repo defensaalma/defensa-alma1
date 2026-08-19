@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#6A2391">
 
-<title>Defensa Alma — Estudio jurídico especialista en derecho de familia y laboral</title>
+<title>Estudio Jurídico Defensa Alma — Abogados especialistas en derecho de Familia y Laboral</title>
 <meta name="description" content="Estudio jurídico especialista en derecho de familia y laboral. Tarifa fija publicada, diagnóstico gratuito, documentos, videollamada y panel de seguimiento. Atención 100% online a todo Chile.">
 <meta name="keywords" content="abogada de familia, abogada laboral, divorcio, pensión de alimentos, relación directa y regular, despido, tutela laboral, Ley Karin, tarifa fija, Chile">
 <meta name="author" content="Defensa Alma">
@@ -78,7 +78,7 @@ img{max-width:100%;display:block}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;position:relative}
 .hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.4rem .9rem;border-radius:999px;font-size:.8rem;font-weight:500;margin-bottom:1.2rem}
 .hero-pill img{height:20px}
-.hero h1{font-size:clamp(2.3rem,4.6vw,3.4rem);font-weight:700;line-height:1.08}
+.hero h1{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;line-height:1.12}
 .hero h1 em{font-style:italic;color:var(--coral)}
 .hero-lead{font-size:1.12rem;color:rgba(255,255,255,.85);margin-top:1.1rem;max-width:42ch}
 .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
@@ -88,6 +88,15 @@ img{max-width:100%;display:block}
 .hero-chips .d{width:8px;height:8px;border-radius:50%}
 .hero-stat{margin-top:1.8rem;font-size:.84rem;color:rgba(255,255,255,.65);display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
 .hero-stat b{color:#fff;font-weight:600}
+.hsearch{margin-top:1.6rem;max-width:530px}
+.hsearch-q{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.65rem}
+.hsearch-bar{display:flex;gap:.5rem;align-items:center;background:#fff;border-radius:999px;padding:.32rem .32rem .32rem 1rem;box-shadow:0 18px 40px -20px rgba(0,0,0,.65)}
+.hsearch-bar>svg{width:19px;height:19px;color:var(--muted);flex:none}
+.hsearch-bar input{flex:1;min-width:0;border:none;outline:none;background:transparent;font-family:'Inter';font-size:.95rem;color:var(--ink)}
+.hsearch-bar .btn{padding:.7rem 1.35rem;font-size:.92rem;flex:none}
+.hchips{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.85rem}
+.hchip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#EFE0F7;font-family:'Inter';font-size:.82rem;padding:.4rem .9rem;border-radius:999px;cursor:pointer;transition:background .15s}
+.hchip:hover{background:rgba(255,255,255,.24)}
 
 /* BANDA PROMOCIONAL bajo el demo */
 .promo-band{background:linear-gradient(90deg,var(--coral),var(--coral-deep));color:#fff;padding:1.05rem 24px;display:flex;align-items:center;justify-content:center;gap:1.1rem 1.4rem;flex-wrap:wrap;box-shadow:inset 0 6px 18px -12px rgba(0,0,0,.35)}
@@ -361,12 +370,24 @@ footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:cent
   <div class="wrap hero-grid">
     <div>
       <span class="hero-pill"><img src="assets/figura-crema.png" alt="">Estudio Jurídico · Plataforma online</span>
-      <h1>Estudio jurídico especialista en derecho de <em>familia y laboral</em></h1>
+      <h1>Estudio Jurídico Defensa Alma, abogados especialistas en derecho de <em>Familia y Laboral</em></h1>
+      <div class="hsearch">
+        <p class="hsearch-q">¿Qué necesitas?</p>
+        <div class="hsearch-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="hq" placeholder="Ej: quiero demandar alimentos" onkeydown="if(event.key==='Enter')heroSearch()" aria-label="Cuéntanos qué necesitas">
+          <button class="btn btn-coral" onclick="heroSearch()">Buscar</button>
+        </div>
+        <div class="hchips">
+          <button class="hchip" onclick="heroPick('div')">Divorcio</button>
+          <button class="hchip" onclick="heroPick('ali')">Alimentos</button>
+          <button class="hchip" onclick="heroPick('cuid')">Cuidado personal</button>
+          <button class="hchip" onclick="heroPick('desp')">Despido</button>
+          <button class="hchip" onclick="heroPick('karin')">Ley Karin</button>
+          <button class="hchip" onclick="openDiag()">Ver todo</button>
+        </div>
+      </div>
       <div class="hero-cta">
-        <button class="btn btn-coral" onclick="openDiag()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9.5 14.5 4 20"/><circle cx="13" cy="9" r="6"/></svg>
-          Diagnóstico gratuito
-        </button>
         <a href="#tarifas" class="btn btn-ghost">Ver catálogo de tarifas</a>
         <a href="/contratar/otros" class="btn btn-ghost">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>
@@ -698,6 +719,11 @@ function priceCard(s){
 // Los destacados aparecen solo en su franja; cada área muestra el resto, sin repetir.
 ['familia','laboral'].forEach(a=>{const el=document.getElementById('grid-'+a);if(el)el.innerHTML=byArea(a).map(priceCard).join('')});
 const dest=document.getElementById('grid-destacados');if(dest)dest.innerHTML=CATALOG.filter(s=>s.hot).map(priceCard).join('');
+
+/* ---- Buscador del inicio: texto libre → trámite ---- */
+const HKEY=[[/unilateral/i,'divu'],[/divorcio|separaci|matrimonio/i,'div'],[/aliment|pensi[oó]n|manutenc/i,'ali'],[/visita|relaci[oó]n directa|r[eé]gimen/i,'rdr'],[/salida del pa[ií]s|viaj|autorizaci[oó]n/i,'sal'],[/cuidado personal|tuici[oó]n|custodia/i,'cuid'],[/medida.*protecci|protecci[oó]n/i,'prot'],[/vif|violencia|maltrat/i,'vif'],[/audiencia|comparec/i,'comp'],[/escrito/i,'escr'],[/despido|desvincul|finiquito|autodespido/i,'desp'],[/tutela|derechos fundamentales/i,'tut'],[/karin|acoso|hostig/i,'karin']];
+function heroPick(id){const s=get(id);if(!s)return openDiag();if(s.quote){mTitle.textContent='Otros casos';diagOtros();showModal();return}mTitle.textContent='Diagnóstico inmediato';diagResult(id);showModal();}
+function heroSearch(){const el=document.getElementById('hq');const v=(el&&el.value||'').trim();if(!v)return openDiag();for(const k of HKEY){if(k[0].test(v))return heroPick(k[1])}openDiag();}
 
 /* ---- Diagnóstico automatizado: área → tipología → tarifa inmediata ---- */
 function openDiag(area){
