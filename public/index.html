@@ -452,10 +452,11 @@ footer.ft{background:var(--blue-ink);color:rgba(255,255,255,.72);text-align:cent
     <p style="color:rgba(255,255,255,.85);font-size:1.05rem;max-width:62ch;margin:0 auto 1.7rem"><b style="color:#fff">Única herramienta en el mercado</b> capaz de entregarte <b style="color:#fff">montos detallados por ítem</b>, útil para demandar alimentos o responder una demanda. Necesaria para preparar, con fundamentos y topes legales, los montos de pensión de alimentos.</p>
     <div class="calc-grid">
       <div class="calc-card">
-        <span class="calc-tag">Gratis</span>
-        <h3>Muestra reducida</h3>
-        <p>Mira una vista previa con un ejemplo real: cómo se ve la planilla y qué resultado entrega, en pesos y en UTM.</p>
-        <a class="btn btn-outline" href="/muestra-calculadora.pdf" target="_blank" rel="noopener">Ver muestra gratuita (PDF)</a>
+        <span class="calc-tag">Sin costo</span>
+        <h3>Calculadora sin costo</h3>
+        <p>Calcula aquí mismo, gratis: ingresas los ingresos de ambos progenitores y el número de hijos, y obtienes los parámetros legales vigentes y el monto estimado, partiendo siempre del mínimo legal.</p>
+        <p style="font-size:.86rem;opacity:.75">El desglose por ítem de cada gasto es parte de la planilla completa.</p>
+        <button class="btn btn-outline" onclick="openCalc()">Abrir calculadora sin costo</button>
       </div>
       <div class="calc-card feat">
         <span class="calc-tag gold">Planilla completa</span>
@@ -761,6 +762,54 @@ function priceCard(s){
 // Los destacados aparecen solo en su franja; cada área muestra el resto, sin repetir.
 ['familia','laboral'].forEach(a=>{const el=document.getElementById('grid-'+a);if(el)el.innerHTML=byArea(a).map(priceCard).join('')});
 const dest=document.getElementById('grid-destacados');if(dest)dest.innerHTML=CATALOG.filter(s=>s.hot).map(priceCard).join('');
+
+/* ---- Calculadora de alimentos · versión sin costo ---- */
+const IMM=553553, UTMV=71649;             // ingreso mínimo mensual y UTM vigentes
+const clpf=n=>'$'+Math.round(n).toLocaleString('es-CL');
+const utmf=n=>(n/UTMV).toLocaleString('es-CL',{minimumFractionDigits:2,maximumFractionDigits:2});
+function openCalc(){
+ mTitle.textContent='Calculadora sin costo';
+ mBody.innerHTML=`
+  <p class="step-label">Parámetros legales vigentes</p>
+  <div class="coti-block"><p class="coti-l">Base de cálculo</p>
+   <p>Ingreso mínimo mensual: <b>${clpf(IMM)}</b> · UTM: <b>${clpf(UTMV)}</b><br>
+   <b>Mínimo legal:</b> 40% del ingreso mínimo con un hijo/a; 30% por cada hijo/a si son dos o más (Art. 3, Ley N° 14.908).<br>
+   <b>Tope legal:</b> 50% de las rentas de quien paga (Art. 7).</p></div>
+  <div class="field" id="f-ia"><label>Ingreso mensual líquido de quien paga la pensión</label><input id="c-ia" inputmode="numeric" placeholder="Ej: 800000"><div class="err">Ingresa un monto válido.</div></div>
+  <div class="field" id="f-io"><label>Ingreso mensual líquido del otro progenitor</label><input id="c-io" inputmode="numeric" placeholder="Ej: 500000"></div>
+  <div class="field" id="f-nh"><label>Número de hijos/as</label><input id="c-nh" inputmode="numeric" value="1"><div class="err">Debe ser al menos 1.</div></div>
+  <button class="btn btn-coral" style="width:100%;margin-top:.4rem" onclick="calcAlim()">Calcular</button>
+  <div id="c-res"></div>`;
+ showModal();
+}
+function calcAlim(){
+ const num=id=>Number(String((document.getElementById(id)||{}).value||'').replace(/[^0-9]/g,''))||0;
+ const ia=num('c-ia'), io=num('c-io'), nh=num('c-nh');
+ setInvalid('f-ia', ia<=0); setInvalid('f-nh', nh<1);
+ if(ia<=0||nh<1) return;
+ const porHijo = nh===1 ? IMM*0.40 : IMM*0.30;
+ const minLegal = porHijo*nh;
+ const tope = ia*0.5;
+ const alcanza = tope >= minLegal;
+ const share = (ia+io)>0 ? Math.round(ia/(ia+io)*100) : 100;
+ document.getElementById('c-res').innerHTML=`
+  <div class="result-box" style="margin-top:1.1rem">
+    <p class="rl">Total estimado · parte del mínimo legal</p>
+    <h4 style="margin-bottom:.1rem">${clpf(minLegal)}</h4>
+    <p class="meta">${utmf(minLegal)} UTM al mes${nh>1?` · ${clpf(porHijo)} por cada hijo/a`:''}</p>
+  </div>
+  <div class="coti-block"><p class="coti-l">Mínimo legal (Art. 3)</p><p>${clpf(minLegal)} al mes${nh>1?` (${nh} hijos/as × ${clpf(porHijo)})`:' (40% del ingreso mínimo)'}</p></div>
+  <div class="coti-block"><p class="coti-l">Tope legal (Art. 7)</p><p>${clpf(tope)} al mes · 50% de ${clpf(ia)}</p></div>
+  <div class="coti-block"><p class="coti-l">Rango referencial</p><p>${alcanza?`Entre <b>${clpf(minLegal)}</b> y <b>${clpf(tope)}</b> al mes.`:`El 50% de los ingresos declarados (${clpf(tope)}) queda <b>bajo el mínimo legal</b>. El tribunal pondera igualmente la capacidad económica y otros ingresos o bienes de quien paga.`}<br>Quien paga aporta el <b>${share}%</b> de los ingresos del grupo familiar.</p></div>
+  <div class="demo-note">Este cálculo entrega los <b>parámetros legales y el piso mínimo</b>. El monto final se funda en los <b>gastos acreditados del hijo o hija</b> (colegio, salud, vivienda, alimentación y otros): ese detalle <b>ítem por ítem</b> está en la planilla completa. Herramienta referencial: el monto definitivo lo fija el Tribunal de Familia.</div>
+  <div class="coti-block" style="border:2px solid var(--coral);text-align:center">
+    <p class="coti-l">Planilla completa · $5.000</p>
+    <p style="margin-bottom:.7rem">Cada gasto detallado por ítem, cálculo automático y resultado listo para presentar o negociar.</p>
+    <button class="btn btn-coral" style="width:100%" onclick="location.href='/contratar/calc'">Obtener la planilla completa con Webpay</button>
+    <p style="font-size:.74rem;color:var(--muted);margin-top:.5rem"><a href="/muestra-calculadora.pdf" target="_blank" rel="noopener" style="color:var(--coral-deep)">Ver ejemplo de la planilla (PDF)</a></p>
+  </div>`;
+ document.getElementById('c-res').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
 
 /* ---- Buscador del inicio: texto libre → trámite ---- */
 const HKEY=[[/unilateral/i,'divu'],[/divorcio|separaci|matrimonio/i,'div'],[/aliment|pensi[oó]n|manutenc/i,'ali'],[/visita|relaci[oó]n directa|r[eé]gimen/i,'rdr'],[/salida del pa[ií]s|viaj|autorizaci[oó]n/i,'sal'],[/cuidado personal|tuici[oó]n|custodia/i,'cuid'],[/medida.*protecci|protecci[oó]n/i,'prot'],[/vif|violencia|maltrat/i,'vif'],[/audiencia|comparec/i,'comp'],[/escrito/i,'escr'],[/despido|desvincul|finiquito|autodespido/i,'desp'],[/tutela|derechos fundamentales/i,'tut'],[/karin|acoso|hostig/i,'karin']];
