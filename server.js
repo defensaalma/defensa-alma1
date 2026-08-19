@@ -5,6 +5,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
+const os = require('os');
 
 const { query, token } = require('./db');
 const { CATALOG, AREAS, byId, defaultMilestones } = require('./catalog');
@@ -110,6 +111,32 @@ async function markPaid(caseId) {
 }
 
 // Health check
+// --- Producto digital (calculadora): los archivos se versionan en base64 y se
+// reconstruyen al iniciar, en una carpeta temporal fuera de /public.
+const PROD_DIR = path.join(__dirname, 'producto');
+const PROD_TMP = path.join(os.tmpdir(), 'defensaalma-producto');
+const PROD_FILES = { 'planilla.b64': 'Calculadora_Pension_Alimentos.xlsx', 'muestra.b64': 'Muestra_Calculadora_Alimentos.pdf' };
+function buildProducto() {
+  try {
+    fs.mkdirSync(PROD_TMP, { recursive: true });
+    for (const [src, out] of Object.entries(PROD_FILES)) {
+      const p = path.join(PROD_DIR, src);
+      if (!fs.existsSync(p)) { console.log('producto: falta', src); continue; }
+      fs.writeFileSync(path.join(PROD_TMP, out), Buffer.from(fs.readFileSync(p, 'utf8').replace(/\s+/g, ''), 'base64'));
+      console.log('producto: listo', out);
+    }
+  } catch (e) { console.error('producto:', e.message); }
+}
+const prodFile = n => path.join(PROD_TMP, n);
+
+// Muestra gratuita (pública)
+app.get('/muestra-calculadora.pdf', (req, res) => {
+  const f = prodFile('Muestra_Calculadora_Alimentos.pdf');
+  if (!fs.existsSync(f)) return res.status(404).send('Muestra no disponible');
+  res.type('application/pdf');
+  res.sendFile(f);
+});
+
 app.get('/healthz', (req, res) => res.json({ ok: true }));
 
 // ================= PÚBLICO =================
@@ -224,6 +251,17 @@ app.get('/portal/:token/doc/:docId', async (req, res) => {
   const d = await one('SELECT * FROM documents WHERE id=$1 AND case_id=$2 AND visible_cliente=1', [req.params.docId, c.id]);
   if (!d) return res.status(404).send('Documento no encontrado');
   res.download(path.join(DOCS_DIR, d.filename), d.label.replace(/[^\w\sÁÉÍÓÚÑáéíóúñ.-]/g, '') + '.docx');
+});
+
+// Descarga de la planilla comprada (calculadora de alimentos)
+app.get('/portal/:token/calculadora', async (req, res) => {
+  const c = await caseByToken(req.params.token);
+  if (tokenStatus(c) !== 'ok') return res.status(403).send('Acceso no disponible');
+  if (c.service_id !== 'calc') return res.status(404).send('No disponible');
+  if (needsPayment(c)) return res.redirect(`/portal/${c.token}`);
+  const f = prodFile('Calculadora_Pension_Alimentos.xlsx');
+  if (!fs.existsSync(f)) return res.status(404).send('Archivo no disponible');
+  res.download(f, 'Calculadora_Pension_Alimentos_DefensaAlma.xlsx');
 });
 
 // Enlace nuevo cuando venció
@@ -408,6 +446,7 @@ app.post('/admin/case/:id/notify', requireAdmin, async (req, res) => {
 
 // Arranque: auto-crea el admin y levanta el servidor.
 (async function start() {
+  buildProducto();
   const email = (process.env.ADMIN_EMAIL || '').toLowerCase();
   if (email && process.env.ADMIN_PASSWORD) {
     const exists = await one('SELECT id FROM admins WHERE email=$1', [email]);
