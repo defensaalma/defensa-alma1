@@ -5,7 +5,30 @@ const path = require('path');
 const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 
+const os = require('os');
 const DIR = path.join(__dirname, 'templates_docx');
+// Plantillas nuevas: se guardan como contenido (XML) y se arman al vuelo sobre el
+// membrete de una plantilla existente, para no versionar archivos binarios pesados.
+const EXTRA_JSON = path.join(DIR, 'extra_docs.json');
+const EXTRA_BASE = path.join(DIR, '02_Demanda_de_alimentos.docx');
+const EXTRA_DIR = path.join(os.tmpdir(), 'defensaalma-plantillas');
+function buildExtras() {
+  try {
+    if (!fs.existsSync(EXTRA_JSON) || !fs.existsSync(EXTRA_BASE)) return;
+    fs.mkdirSync(EXTRA_DIR, { recursive: true });
+    const extras = JSON.parse(fs.readFileSync(EXTRA_JSON, 'utf8'));
+    const base = fs.readFileSync(EXTRA_BASE);
+    for (const [nombre, xml] of Object.entries(extras)) {
+      const destino = path.join(EXTRA_DIR, nombre);
+      if (fs.existsSync(destino)) continue;
+      const zip = new PizZip(base);
+      zip.file('word/document.xml', xml);
+      fs.writeFileSync(destino, zip.generate({ type: 'nodebuffer' }));
+      console.log('plantilla lista:', nombre);
+    }
+  } catch (e) { console.error('plantillas extra:', e.message); }
+}
+buildExtras();
 
 // serviceId del catálogo -> archivo de plantilla
 const TEMPLATE = {
@@ -25,11 +48,22 @@ const TEMPLATE = {
   nom:  '14_Cambio_de_nombre_rectificacion.docx',
   marca:'15_Registro_de_marca_INAPI.docx',
   mera: '16_Escrito_de_mera_tramitacion.docx',
+  // Servicios nuevos de familia
+  divu: '17_Divorcio_unilateral.docx',
+  cuid: '18_Cuidado_personal.docx',
+  prot: '19_Medidas_de_proteccion.docx',
+  vif:  '20_Denuncia_VIF.docx',
+  comp: '21_Patrocinio_comparecencia_audiencia.docx',
+  escr: '16_Escrito_de_mera_tramitacion.docx',
 };
 
 function templatePath(serviceId) {
   const f = TEMPLATE[serviceId];
-  return f ? path.join(DIR, f) : null;
+  if (!f) return null;
+  const propia = path.join(DIR, f);
+  if (fs.existsSync(propia)) return propia;
+  const armada = path.join(EXTRA_DIR, f);
+  return fs.existsSync(armada) ? armada : propia;
 }
 function hasTemplate(serviceId) {
   const p = templatePath(serviceId);
