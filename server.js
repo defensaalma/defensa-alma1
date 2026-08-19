@@ -412,6 +412,12 @@ app.post('/admin/case/:id/doc/:docId/delete', requireAdmin, async (req, res) => 
   if (d) { try { fs.unlinkSync(path.join(DOCS_DIR, d.filename)); } catch (e) {} await query('DELETE FROM documents WHERE id=$1', [d.id]); }
   res.redirect('/admin/case/' + req.params.id);
 });
+app.post('/admin/case/:id/paid', requireAdmin, async (req, res) => {
+  const c = await caseById(req.params.id);
+  if (c && c.status === 'nuevo') await markPaid(c.id);
+  res.redirect(`/admin/case/${req.params.id}`);
+});
+
 app.post('/admin/case/:id/meta', requireAdmin, async (req, res) => {
   await query('UPDATE cases SET rol=$1, tribunal=$2, status=$3 WHERE id=$4',
     [req.body.rol || null, req.body.tribunal || null, req.body.status, req.params.id]);
