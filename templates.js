@@ -64,7 +64,19 @@ function clientPortal(c, milestones, notifications, documents = [], appt = null,
     : '<p class="muted">Aún no hay notificaciones.</p>';
 
   const needsPay = Number(c.price) > 0 && c.status === 'nuevo';
-  const payBlock = needsPay
+  const LINK_CALC = process.env.PAY_LINK_CALC || '';
+  const LINK_GRAL = process.env.PAY_LINK_URL || '';
+  const linkPago = c.service_id === 'calc' ? (LINK_CALC || LINK_GRAL) : LINK_GRAL;
+
+  const payBlock = (needsPay && linkPago)
+    ? `<div class="card"><div class="eyebrow">Pago pendiente</div>
+        <p>Para continuar, paga <b>${clp(c.price)}</b> con Webpay.</p>
+        <div class="case-box" style="margin:1rem 0"><div class="t">Anota este dato al pagar</div>
+          <div class="n">N° de caso: ${c.id}</div>
+          <div class="j">Te lo pedirán en el formulario de Webpay.</div></div>
+        <a class="btn full" href="${linkPago}" target="_blank" rel="noopener">Pagar ${clp(c.price)} con Webpay</a>
+        <p class="muted" style="text-align:center;margin-top:.6rem">Pago seguro en el sitio de Transbank. Al confirmarse tu pago habilitamos esta página; si no se actualiza en unos minutos, escríbenos.</p></div>`
+    : needsPay
     ? `<div class="card"><div class="eyebrow">Pago pendiente</div>
         <p>Para iniciar tu trámite, paga la tarifa fija de <b>${clp(c.price)}</b> con Webpay.</p>
         <form method="POST" action="/pay/start/${c.id}" style="margin-top:1rem"><button class="btn full">Pagar ${clp(c.price)} con Webpay</button></form>
@@ -194,6 +206,10 @@ function adminCase(c, milestones, notifications, documents = [], hasTemplate = f
         <form method="POST" action="/admin/case/${c.id}/relink"><button class="btn blue" style="padding:.45rem .9rem;font-size:.82rem">Generar enlace nuevo</button></form>
         <form method="POST" action="/admin/case/${c.id}/revoke" onsubmit="return confirm('¿Revocar el acceso del cliente a este caso?')"><button class="btn" style="padding:.45rem .9rem;font-size:.82rem;background:#A23B2E">Revocar enlace</button></form>
       </div>
+      ${Number(c.price) > 0 && c.status === 'nuevo' ? `<form method="POST" action="/admin/case/${c.id}/paid" style="margin-top:.8rem">
+        <button class="btn" style="width:100%;background:#4FA079;color:#fff">Marcar como pagado (confirmé el pago en Webpay)</button>
+        <p class="muted" style="font-size:.76rem;text-align:center;margin-top:.35rem">Habilita la descarga o la agenda del cliente y le avisa por correo.</p>
+      </form>` : ''}
       <form class="row" method="POST" action="/admin/case/${c.id}/meta" style="margin-top:.8rem">
         <div style="flex:1;min-width:160px"><label>Rol de la causa</label><input name="rol" value="${esc(c.rol||'')}" placeholder="C-1234-2026"></div>
         <div style="flex:1;min-width:160px"><label>Tribunal</label><input name="tribunal" value="${esc(c.tribunal||'')}"></div>
