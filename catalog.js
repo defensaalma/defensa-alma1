@@ -3,6 +3,7 @@
 const AREAS = {
   familia: 'Derecho de familia',
   consulta: 'Otros casos',
+  producto: 'Producto digital',
 };
 
 const CATALOG = [
@@ -16,6 +17,7 @@ const CATALOG = [
   { id:'vif',  area:'familia',    name:'Causas de violencia intrafamiliar (VIF)',   price:350000, plazo:'Sujeto a agenda del tribunal', juicio:true,  incluye:'Denuncia o demanda por VIF, solicitud de medidas cautelares y representación en audiencia.', requiere:'Relato de los hechos y datos de las partes.' },
   { id:'comp', area:'familia',    name:'Comparecencia a audiencia',                 price:70000,  plazo:'Según fecha de la audiencia', incluye:'Comparecencia y representación de la abogada en una audiencia determinada.', requiere:'Rol y tribunal de la causa y fecha de la audiencia.' },
   { id:'escr', area:'familia',    name:'Presentación de escritos',                  price:25000,  plazo:'48 horas hábiles', incluye:'Redacción y presentación de escritos en una causa de familia en curso.', requiere:'Rol y tribunal de la causa y el escrito requerido.' },
+  { id:'calc', area:'producto',   name:'Calculadora de pensión de alimentos (planilla Excel)', price:5000, plazo:'Descarga inmediata después del pago', incluye:'Planilla Excel automática que calcula la pensión sugerida en pesos y en UTM, con detalle por ítem, mínimo legal y tope del 50% (Ley N° 14.908). Incluye guía y ejemplo.', requiere:'Solo tus datos de contacto.' },
   { id:'otros',area:'consulta',   name:'Asesoría inicial (se descuenta al contratar)', price:15000, plazo:'Videollamada · se agenda tras el pago', incluye:'Videollamada de asesoría con la abogada para evaluar tu caso y orientarte. Su valor de $15.000 se descuenta si luego contratas un servicio.', requiere:'Una breve descripción de lo que necesitas.' },
 ];
 
@@ -25,6 +27,9 @@ const byId = id => CATALOG.find(s => s.id === id);
 function defaultMilestones(service) {
   if (service.area === 'consulta' || service.price === 0) {
     return ['Registro recibido','Videollamada agendada','Primera atención realizada','Próximos pasos definidos'];
+  }
+  if (service.area === 'producto') {
+    return ['Pago confirmado','Descarga disponible'];
   }
   if (service.juicio) {
     return ['Diagnóstico realizado','Pago confirmado','Documentos firmados','Demanda ingresada','Audiencia agendada','Sentencia notificada'];
